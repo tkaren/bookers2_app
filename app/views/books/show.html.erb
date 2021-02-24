@@ -1,0 +1,11 @@
+book#show
+
+<div class="post-body">
+  <%= attachment_image_tag @book, :image %>
+  <p>ユーザーネーム：<%= @book.user.name %></p>
+  <p>Title：<%= @book.title %></p>
+  <p>Opinion：<%= @book.body %></p>
+</div>
+
+<%= link_to "Edit", edit_book_path(@book.id) %>
+<%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか?" %>
