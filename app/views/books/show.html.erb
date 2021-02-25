@@ -1,10 +1,14 @@
-book#show
+
 
 <div class="post-body">
-  <%= attachment_image_tag @book, :image %>
-  <p>ユーザーネーム：<%= @book.user.name %></p>
-  <p>Title：<%= @book.title %></p>
-  <p>Opinion：<%= @book.body %></p>
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+  <%= link_to user_path(@user.id) do %>
+  <p><%= @user.name %></p>
+  <% end %>
+  <%= link_to book_path(@book.id) do %>
+  <p><%= @book.title %></p>
+  <% end %>
+  <p><%= @book.body %></p>
 </div>
 
 <%= link_to "Edit", edit_book_path(@book.id) %>
